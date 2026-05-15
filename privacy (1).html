@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>명리코치 · 이용약관 및 개인정보처리방침</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+  :root {
+    --purple: #6B21A8;
+    --purple-light: #9333EA;
+    --purple-pale: #F3E8FF;
+    --gold: #B8860B;
+    --gold-light: #D4A017;
+    --bg: #FAFAFA;
+    --text: #1a1a2e;
+    --text-light: #555;
+    --border: #E5D0FF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  header {
+    background: linear-gradient(135deg, #3B0764 0%, #6B21A8 60%, #9333EA 100%);
+    color: white;
+    padding: 48px 24px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '☯';
+    position: absolute;
+    font-size: 200px;
+    opacity: 0.05;
+    top: -40px;
+    right: -20px;
+  }
+
+  header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  /* 탭 */
+  .tab-bar {
+    display: flex;
+    background: white;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(107,33,168,0.08);
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    background: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-light);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active {
+    color: var(--purple);
+    border-bottom-color: var(--purple);
+    font-weight: 700;
+  }
+
+  /* 콘텐츠 */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  .last-updated {
+    display: inline-block;
+    background: var(--purple-pale);
+    color: var(--purple);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--purple);
+    margin: 36px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 8px 0 16px 0;
+  }
+
+  ul li {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    padding: 4px 0 4px 18px;
+    position: relative;
+  }
+
+  ul li::before {
+    content: '•';
+    position: absolute;
+    left: 4px;
+    color: var(--purple-light);
+  }
+
+  /* 테이블 */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px;
+    font-size: 0.88rem;
+  }
+
+  th {
+    background: var(--purple);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-light);
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: var(--purple-pale); }
+
+  /* 경고 박스 */
+  .notice {
+    background: #FFF7ED;
+    border-left: 4px solid var(--gold-light);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.88rem;
+    color: #7C4700;
+    margin: 16px 0;
+  }
+
+  /* 푸터 */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    background: #1a1a2e;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.82rem;
+  }
+
+  footer a {
+    color: var(--purple-light);
+    text-decoration: none;
+  }
+
+  .contact-box {
+    background: linear-gradient(135deg, #3B0764, #6B21A8);
+    color: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 32px;
+    text-align: center;
+  }
+
+  .contact-box p { color: rgba(255,255,255,0.8); margin-bottom: 4px; }
+  .contact-box a { color: #E9D5FF; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>명리코치</h1>
+  <p>Coach Ruach · 법적 고지</p>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="showTab('privacy')">개인정보처리방침</button>
+  <button class="tab-btn" onclick="showTab('terms')">이용약관</button>
+</div>
+
+<!-- ===== 이용약관 ===== -->
+<div id="terms" class="tab-content">
+<div class="container">
+  <span class="last-updated">최종 수정일: 2026년 5월 15일</span>
+
+  <h2>제1조 (목적)</h2>
+  <p>본 약관은 Coach Ruach(이하 "운영자")가 제공하는 모바일 앱 서비스 "명리코치"(이하 "서비스")의 이용 조건 및 절차, 운영자와 이용자 간의 권리·의무 및 책임 사항을 규정함을 목적으로 합니다.</p>
+
+  <h2>제2조 (정의)</h2>
+  <ul>
+    <li>"서비스"란 명리코치 앱을 통해 제공되는 사주 만세력 조회, AI 명리 상담, 일운 달력, 저장 기능 등 일체의 서비스를 말합니다.</li>
+    <li>"이용자"란 본 약관에 동의하고 서비스를 이용하는 자를 말합니다.</li>
+    <li>"코인"이란 AI 명리 상담 등 유료 기능 이용에 사용되는 앱 내 가상 화폐를 말합니다.</li>
+    <li>"AI 명리 상담"이란 이용자가 입력한 사주 정보를 기반으로 AI가 명리학적 해석을 제공하는 서비스를 말합니다.</li>
+  </ul>
+
+  <h2>제3조 (약관의 효력 및 변경)</h2>
+  <p>본 약관은 서비스 화면에 게시하거나 이용자에게 통지함으로써 효력이 발생합니다. 운영자는 관련 법령을 위반하지 않는 범위에서 약관을 변경할 수 있으며, 변경 시 앱 내 공지 또는 이메일을 통해 7일 전 사전 안내합니다.</p>
+
+  <h2>제4조 (서비스 제공 내용)</h2>
+  <table>
+    <tr><th>서비스</th><th>내용</th><th>요금</th></tr>
+    <tr><td>사주 만세력 조회</td><td>眞我 만세력 기반 사주 계산 및 결과 표시</td><td>무료</td></tr>
+    <tr><td>일운 달력</td><td>오늘의 일진 및 월별 운세 달력</td><td>무료</td></tr>
+    <tr><td>AI 명리 상담</td><td>사주 기반 AI 명리 해석 채팅</td><td>🔔 서비스 준비중</td></tr>
+    <tr><td>저장 목록</td><td>가족·지인 사주 정보 저장 및 관리</td><td>무료</td></tr>
+    <tr><td>Coach Ruach 1:1 상담</td><td>카카오톡 오픈채팅을 통한 개인 상담</td><td>별도 문의</td></tr>
+  </table>
+  <div class="notice">🔔 유료 AI 명리 상담 및 코인 결제 서비스는 현재 준비중입니다. 정식 서비스 개시 시 앱 내 공지를 통해 안내드립니다.</div>
+
+  <h2>제5조 (코인 정책)</h2>
+  <div class="notice">🔔 코인 관련 유료 서비스는 현재 준비중입니다. 아래 내용은 정식 서비스 개시 후 적용됩니다.</div>
+  <table>
+    <tr><th>항목</th><th>내용</th></tr>
+    <tr><td>코인 사용</td><td>AI 명리 상담 1세션 = 코인 1개 차감</td></tr>
+    <tr><td>코인 충전</td><td>앱 내 결제 또는 운영자 지정 방법으로 구매</td></tr>
+    <tr><td>코인 유효기간</td><td>구매일로부터 1년 (미사용 코인 소멸)</td></tr>
+    <tr><td>코인 양도</td><td>타인에게 양도·거래 불가</td></tr>
+    <tr><td>코인 환불</td><td>환불 불가</td></tr>
+  </table>
+
+  <h2>제6조 (코인 유효기간 및 환불 정책)</h2>
+  <div class="notice">🔔 코인 결제 서비스는 현재 준비중이며, 아래 정책은 정식 서비스 개시 후 적용됩니다.</div>
+  <ul>
+    <li>코인 환불: 불가</li>
+    <li>코인 유효기간: 구매일로부터 1년</li>
+    <li>유효기간 만료 시: 미사용 코인 자동 소멸</li>
+    <li>서비스 오류로 인한 코인 차감의 경우 운영자에게 문의 시 복구 처리</li>
+  </ul>
+
+  <h2>제7조 (이용자의 의무)</h2>
+  <ul>
+    <li>타인의 개인정보를 무단으로 수집·이용하는 행위 금지</li>
+    <li>서비스 콘텐츠 무단 복제·배포·상업적 이용 금지</li>
+    <li>서비스 정상 운영 방해 행위(해킹, 악성 코드 배포 등) 금지</li>
+    <li>허위 정보 입력 또는 타인 사칭 금지</li>
+    <li>관련 법령 및 본 약관 위반 행위 금지</li>
+  </ul>
+
+  <h2>제8조 (운영자의 의무)</h2>
+  <p>운영자는 관련 법령과 본 약관이 금지하거나 미풍양속에 반하는 행위를 하지 않으며, 지속적이고 안정적인 서비스 제공을 위해 최선을 다합니다.</p>
+
+  <h2>제9조 (AI 명리 상담 서비스 면책)</h2>
+  <div class="notice">⚠️ 본 서비스는 오락·참고 목적이며, 의료·법률·재정 전문 서비스가 아닙니다.</div>
+  <ul>
+    <li>AI 명리 해석은 전통 명리학 이론에 기반한 참고 정보이며, 법적·의료적·재정적 조언을 대체하지 않습니다.</li>
+    <li>운명, 진로, 결혼, 투자 등 중요한 결정은 반드시 전문가와 상담 후 본인이 판단하시기 바랍니다.</li>
+    <li>AI 답변의 정확성·완전성에 대해 운영자는 법적 책임을 지지 않습니다.</li>
+  </ul>
+
+  <h2>제10조 (지식재산권)</h2>
+  <p>서비스 내 콘텐츠(텍스트, 이미지, 만세력 계산 로직, 디자인 등)에 대한 지식재산권은 운영자에게 귀속됩니다.</p>
+
+  <h2>제11조 (서비스 이용 제한 및 계정 해지)</h2>
+  <p>이용자는 언제든지 앱 내 설정 또는 이메일(coachruach@gmail.com)을 통해 서비스 탈퇴를 요청할 수 있습니다.</p>
+
+  <h2>제12조 (분쟁 해결 및 준거법)</h2>
+  <p>대한민국 법령을 준거법으로 하며, 관할 법원은 운영자의 주소지 관할 법원으로 합니다.</p>
+
+  <h2>제13조 (문의처)</h2>
+  <div class="contact-box">
+    <p>서비스명: 명리코치 · 운영자: Coach Ruach</p>
+    <p>📧 <a href="mailto:coachruach@gmail.com">coachruach@gmail.com</a></p>
+    <p>🌐 <a href="http://www.krcoach.kr">www.krcoach.kr</a></p>
+    <p style="margin-top:8px; font-size:0.8rem;">문의 처리 기간: 요청 후 5영업일 이내</p>
+  </div>
+  <p style="margin-top:24px; font-size:0.82rem; color:#aaa;">부칙: 본 약관은 2026년 4월 27일부터 시행합니다.</p>
+</div>
+</div>
+
+<!-- ===== 개인정보처리방침 ===== -->
+<div id="privacy" class="tab-content active">
+<div class="container">
+  <span class="last-updated">최종 수정일: 2026년 5월 15일</span>
+
+  <h2>제1조 (총칙)</h2>
+  <p>명리코치(이하 "앱")는 이용자의 개인정보를 중요하게 여기며, 「개인정보 보호법」 및 관련 법령을 준수합니다. 본 방침은 앱이 수집하는 개인정보의 항목, 수집 목적, 보유 기간, 제3자 제공 여부 등을 안내합니다.</p>
+
+  <h2>제2조 (수집하는 개인정보 항목 및 수집 방법)</h2>
+  <table>
+    <tr><th>구분</th><th>수집 항목</th><th>수집 방법</th></tr>
+    <tr><td>회원 가입</td><td>이름(닉네임), 이메일 주소</td><td>소셜 로그인(Google OAuth)</td></tr>
+    <tr><td>사주 입력</td><td>이름, 생년월일, 출생시각, 성별, 출생지역</td><td>이용자 직접 입력</td></tr>
+    <tr><td>AI 상담</td><td>상담 내용(텍스트)</td><td>채팅 입력</td></tr>
+    <tr><td>서비스 이용</td><td>앱 접속 기록, 기기 정보(OS, 앱 버전)</td><td>자동 수집</td></tr>
+  </table>
+
+  <h2>제3조 (개인정보 수집 및 이용 목적)</h2>
+  <ul>
+    <li>사주 만세력 계산 및 AI 명리 상담 서비스 제공</li>
+    <li>회원 식별 및 서비스 이용 내역 관리</li>
+    <li>코인 결제 및 환불 처리</li>
+    <li>서비스 개선 및 오류 분석</li>
+    <li>명리학 임상 연구 (이용자 자발적 기여 시에 한함)</li>
+    <li>법령상 의무 이행</li>
+  </ul>
+
+  <h2>제4조 (개인정보 보유 및 이용 기간)</h2>
+  <table>
+    <tr><th>항목</th><th>보유 기간</th></tr>
+    <tr><td>회원 정보</td><td>회원 탈퇴 시까지</td></tr>
+    <tr><td>AI 상담 기록</td><td>서비스 이용 후 1년</td></tr>
+    <tr><td>결제 기록</td><td>전자상거래법에 따라 5년</td></tr>
+    <tr><td>접속 기록</td><td>통신비밀보호법에 따라 3개월</td></tr>
+  </table>
+
+  <h2>제5조 (개인정보의 제3자 제공)</h2>
+  <p>앱은 원칙적으로 이용자의 개인정보를 외부에 제공하지 않습니다. 다만, 다음의 경우는 예외입니다.</p>
+  <ul>
+    <li>이용자가 사전에 동의한 경우</li>
+    <li>법령에 따라 수사기관 등이 요청하는 경우</li>
+  </ul>
+
+  <h2>제6조 (개인정보 처리 위탁)</h2>
+  <table>
+    <tr><th>위탁 업체</th><th>위탁 업무</th></tr>
+    <tr><td>Google LLC</td><td>소셜 로그인(OAuth) 인증</td></tr>
+    <tr><td>OpenAI / Anthropic</td><td>AI 명리 상담 텍스트 처리</td></tr>
+    <tr><td>Amazon Web Services</td><td>서버 인프라 및 파일 저장</td></tr>
+  </table>
+
+  <h2>제7조 (이용자의 권리)</h2>
+  <ul>
+    <li>개인정보 열람 요청</li>
+    <li>개인정보 정정·삭제 요청</li>
+    <li>개인정보 처리 정지 요청</li>
+    <li>회원 탈퇴 (앱 내 설정 또는 이메일 요청)</li>
+  </ul>
+
+  <h2>제8조 (개인정보 보호책임자)</h2>
+  <table>
+    <tr><th>책임자</th><td>Coach Ruach</td></tr>
+    <tr><th>이메일</th><td>coachruach@gmail.com</td></tr>
+    <tr><th>문의 처리 기간</th><td>요청 후 10일 이내</td></tr>
+  </table>
+
+  <h2>제9조 (개인정보 자동 수집 장치)</h2>
+  <p>앱은 쿠키(Cookie)를 사용합니다. 쿠키는 세션 유지 및 로그인 상태 보존에 사용되며, 이용자는 브라우저 설정을 통해 쿠키 저장을 거부할 수 있습니다.</p>
+
+  <h2>제10조 (개인정보처리방침 변경)</h2>
+  <p>본 방침은 법령 개정 또는 서비스 변경에 따라 수정될 수 있습니다. 변경 시 앱 내 공지 또는 이메일을 통해 사전 안내합니다.</p>
+
+  <div class="contact-box">
+    <p>📧 개인정보 관련 문의</p>
+    <p><a href="mailto:coachruach@gmail.com">coachruach@gmail.com</a></p>
+    <p style="margin-top:8px; font-size:0.8rem;">시행일: 2026년 5월 10일</p>
+  </div>
+</div>
+</div>
+
+<footer>
+  <p>© 2026 명리코치 · Coach Ruach · <a href="mailto:coachruach@gmail.com">coachruach@gmail.com</a></p>
+</footer>
+
+<script>
+function showTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
